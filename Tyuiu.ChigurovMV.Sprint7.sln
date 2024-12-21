@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.V10", "Project.V10\Project.V10.csproj", "{A31FEBCB-4F12-4589-8A54-91817397A137}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.V10", "Project.V10\Project.V10.csproj", "{A31FEBCB-4F12-4589-8A54-91817397A137}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.ChigurovMV.Sprint7.Project.V10.Lib", "Tyuiu.ChigurovMV.Sprint7.Project.V10.Lib\Tyuiu.ChigurovMV.Sprint7.Project.V10.Lib.csproj", "{BF3F65DC-D04A-446E-ACD6-2D2FBE0F298D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.ChigurovMV.Sprint7.Project.V10.Lib", "Tyuiu.ChigurovMV.Sprint7.Project.V10.Lib\Tyuiu.ChigurovMV.Sprint7.Project.V10.Lib.csproj", "{BF3F65DC-D04A-446E-ACD6-2D2FBE0F298D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.ChigurovMV.Sprint7.Project.V10.Test", "Tyuiu.ChigurovMV.Sprint7.Project.V10.Test\Tyuiu.ChigurovMV.Sprint7.Project.V10.Test.csproj", "{7BAFE5D7-30A3-44D4-A76C-EAAF692522FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tyuiu.ChigurovMV.Sprint7.Project.V10.Test", "Tyuiu.ChigurovMV.Sprint7.Project.V10.Test\Tyuiu.ChigurovMV.Sprint7.Project.V10.Test.csproj", "{7BAFE5D7-30A3-44D4-A76C-EAAF692522FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

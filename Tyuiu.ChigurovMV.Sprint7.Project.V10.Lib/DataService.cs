@@ -2,12 +2,12 @@
 {
     public class DataService
     {
-        public int[,] GetMatrix(string path)
+        public string[,] GetMatrix(string path)
         {
             int rows = File.ReadLines(path).Count();
             string[] strings = File.ReadAllText(path).Split("\n");
             int columns = strings[0].Split(';').Length;
-            int[,] matrix = new int[rows, columns];
+            string[,] matrix = new string[rows, columns];
 
             using (StreamReader stream = new StreamReader(path))
             {
@@ -18,7 +18,7 @@
                     string[] row = line.Split(';');
                     for (int i = 0; i < columns; i++)
                     {
-                        matrix[count, i] = Convert.ToInt32(row[i]);
+                        matrix[count, i] = row[i];
                     }
                     count++;
                 }
