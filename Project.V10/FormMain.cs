@@ -44,46 +44,29 @@ namespace Project.V10
             }
         }
 
-        private void AddedRowsToolStripMenuItem_CMV_Click(object sender, EventArgs e)
+        private void AddedRowsToolStripMenuItem_CMV_CheckedChanged(object sender, EventArgs e)
         {
+
             if (AddedRowsToolStripMenuItem_CMV.Checked)
             {
-                AddedRowsToolStripMenuItem_CMV.Checked = false;
-                InvisibleRowsByColors(dataGridViewEdit_CMV, Color.Aqua, false);
-            }
-            else
-            {
-                AddedRowsToolStripMenuItem_CMV.Checked = true;
                 InvisibleRowsByColors(dataGridViewEdit_CMV, Color.Aqua, true);
             }
+            else
+            {
+                InvisibleRowsByColors(dataGridViewEdit_CMV, Color.Aqua, false);
+            }
         }
 
-        private void DeletedRowsToolStripMenuItem_CMV_Click(object sender, EventArgs e)
+        private void DeletedRowsToolStripMenuItem_CMV_CheckedChanged(object sender, EventArgs e)
         {
-            if (AddedRowsToolStripMenuItem_CMV.Checked)
+
+            if (DeletedRowsToolStripMenuItem_CMV.Checked)
             {
-                DeletedRowsToolStripMenuItem_CMV.Checked = false;
-                InvisibleRowsByColors(dataGridViewEdit_CMV, Color.OrangeRed, false);
+                InvisibleRowsByColors(dataGridViewEdit_CMV, Color.OrangeRed, true);
             }
             else
             {
-                DeletedRowsToolStripMenuItem_CMV.Checked = true;
-                InvisibleRowsByColors(dataGridViewEdit_CMV, Color.OrangeRed, true);
-            }
-        }
-
-        private void filterToolStripMenuItem_CMV_Click(Object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridViewEdit_CMV.Rows)
-            {
-                if (row.Cells[0].Style.BackColor == Color.OrangeRed)
-                {
-                    DeletedRowsToolStripMenuItem_CMV.Enabled = true;
-                }
-                if (row.Cells[0].Style.BackColor == Color.Aqua)
-                {
-                    AddedRowsToolStripMenuItem_CMV.Enabled = true;
-                }
+                InvisibleRowsByColors(dataGridViewEdit_CMV, Color.OrangeRed, false);
             }
         }
 
@@ -95,6 +78,7 @@ namespace Project.V10
                 this.buttonAddRow_CMV.Enabled = true;
                 this.buttonDeleteMarkedRow_CMV.Enabled = true;
                 checkBoxMarkRow_CMV.Enabled = true;
+                filterToolStripMenuItem_CMV.Enabled = true;
                 if (checkBoxMarkRow_CMV.Checked)
                 {
                     buttonMarkDelete_CMV.Enabled = true;
@@ -104,6 +88,7 @@ namespace Project.V10
             }
             else
             {
+                filterToolStripMenuItem_CMV.Enabled = false;
                 this.buttonAddRow_CMV.Enabled = false;
                 this.buttonDeleteMarkedRow_CMV.Enabled = false;
                 checkBoxMarkRow_CMV.Enabled = false;
@@ -114,9 +99,9 @@ namespace Project.V10
 
         //Поиск
         private void buttonReadOnlySearchOrderID_CMV_Click(object sender, EventArgs e)
-        {        
+        {
             string searchValue = textBoxReadOnlySearchOrderID_CMV.Text;
-            Search(dataGridViewReadOnly_CMV, searchValue,0);
+            Search(dataGridViewReadOnly_CMV, searchValue, 0);
         }
         private void buttonReadOnlySearchUserID_CMV_Click(object sender, EventArgs e)
         {
@@ -182,7 +167,7 @@ namespace Project.V10
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 var cell = dataGridViewEdit_CMV.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                cell.Tag = cell.Value; 
+                cell.Tag = cell.Value;
             }
         }
         //Проверка на пустое содержание ячейки
@@ -196,7 +181,7 @@ namespace Project.V10
                 {
                     e.Cancel = true;
 
-                    cell.Value = cell.Tag; 
+                    cell.Value = cell.Tag;
                 }
             }
         }
@@ -219,7 +204,7 @@ namespace Project.V10
             var confirmResult = MessageBox.Show("Вы уверены, что хотите удалить выделенные ряды? Это действие необратимо.", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirmResult == DialogResult.Yes)
             {
-                for (int i = 0; i < dataGridViewEdit_CMV.RowCount; i++)
+                for (int i = dataGridViewEdit_CMV.Rows.Count - 1; i >= 0; i--)
                 {
                     if (dataGridViewEdit_CMV.Rows[i].Cells[0].Style.BackColor == Color.OrangeRed)
                     {
@@ -290,8 +275,8 @@ namespace Project.V10
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    cell.Style.BackColor = Color.White; 
-                    cell.Tag = null; 
+                    cell.Style.BackColor = Color.White;
+                    cell.Tag = null;
                 }
             }
         }
@@ -332,6 +317,10 @@ namespace Project.V10
             }
         }
 
-        
+        private void statsToolStripMenuItem_CMV_Click(object sender, EventArgs e)
+        {
+            FormStatistic formStatistic = new FormStatistic(dataGridViewEdit_CMV);
+            formStatistic.ShowDialog();
+        }
     }
 }

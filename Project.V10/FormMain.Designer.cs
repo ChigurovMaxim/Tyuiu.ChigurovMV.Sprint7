@@ -79,7 +79,7 @@
             toolTipTask_CMV = new ToolTip(components);
             saveFileDialogTask_CMV = new SaveFileDialog();
             menuStrip_CMV = new MenuStrip();
-            статистикаToolStripMenuItem = new ToolStripMenuItem();
+            statsToolStripMenuItem_CMV = new ToolStripMenuItem();
             filterToolStripMenuItem_CMV = new ToolStripMenuItem();
             DeletedRowsToolStripMenuItem_CMV = new ToolStripMenuItem();
             AddedRowsToolStripMenuItem_CMV = new ToolStripMenuItem();
@@ -132,7 +132,7 @@
             // 
             checkBoxMarkRow_CMV.AutoSize = true;
             checkBoxMarkRow_CMV.Enabled = false;
-            checkBoxMarkRow_CMV.Location = new Point(160, 33);
+            checkBoxMarkRow_CMV.Location = new Point(164, 33);
             checkBoxMarkRow_CMV.Name = "checkBoxMarkRow_CMV";
             checkBoxMarkRow_CMV.Size = new Size(128, 19);
             checkBoxMarkRow_CMV.TabIndex = 4;
@@ -144,7 +144,7 @@
             // 
             buttonUnmarkDelete_CMV.Enabled = false;
             buttonUnmarkDelete_CMV.Image = Properties.Resources.bullet_green;
-            buttonUnmarkDelete_CMV.Location = new Point(351, 33);
+            buttonUnmarkDelete_CMV.Location = new Point(355, 33);
             buttonUnmarkDelete_CMV.Name = "buttonUnmarkDelete_CMV";
             buttonUnmarkDelete_CMV.Size = new Size(51, 45);
             buttonUnmarkDelete_CMV.TabIndex = 3;
@@ -155,7 +155,7 @@
             // 
             buttonMarkDelete_CMV.Enabled = false;
             buttonMarkDelete_CMV.Image = Properties.Resources.bullet_red;
-            buttonMarkDelete_CMV.Location = new Point(294, 33);
+            buttonMarkDelete_CMV.Location = new Point(298, 33);
             buttonMarkDelete_CMV.Name = "buttonMarkDelete_CMV";
             buttonMarkDelete_CMV.Size = new Size(51, 45);
             buttonMarkDelete_CMV.TabIndex = 3;
@@ -301,7 +301,7 @@
             // 
             // OrderValue
             // 
-            OrderValue.HeaderText = "Стоимость заказа";
+            OrderValue.HeaderText = "Стоимость заказа (руб.)";
             OrderValue.MinimumWidth = 6;
             OrderValue.Name = "OrderValue";
             OrderValue.ReadOnly = true;
@@ -317,7 +317,7 @@
             // 
             // ProductCount
             // 
-            ProductCount.HeaderText = "Количество";
+            ProductCount.HeaderText = "Количество (шт.)";
             ProductCount.MinimumWidth = 6;
             ProductCount.Name = "ProductCount";
             ProductCount.ReadOnly = true;
@@ -325,7 +325,7 @@
             // 
             // ProductPrice
             // 
-            ProductPrice.HeaderText = "Стоимость товара";
+            ProductPrice.HeaderText = "Стоимость товара (руб.)";
             ProductPrice.MinimumWidth = 6;
             ProductPrice.Name = "ProductPrice";
             ProductPrice.ReadOnly = true;
@@ -574,22 +574,24 @@
             // 
             // menuStrip_CMV
             // 
-            menuStrip_CMV.Items.AddRange(new ToolStripItem[] { статистикаToolStripMenuItem, filterToolStripMenuItem_CMV, помощьToolStripMenuItem });
+            menuStrip_CMV.Items.AddRange(new ToolStripItem[] { statsToolStripMenuItem_CMV, filterToolStripMenuItem_CMV, помощьToolStripMenuItem });
             menuStrip_CMV.Location = new Point(0, 0);
             menuStrip_CMV.Name = "menuStrip_CMV";
             menuStrip_CMV.Size = new Size(992, 24);
             menuStrip_CMV.TabIndex = 1;
             menuStrip_CMV.Text = "menuStrip1";
             // 
-            // статистикаToolStripMenuItem
+            // statsToolStripMenuItem_CMV
             // 
-            статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
-            статистикаToolStripMenuItem.Size = new Size(80, 20);
-            статистикаToolStripMenuItem.Text = "Статистика";
+            statsToolStripMenuItem_CMV.Name = "statsToolStripMenuItem_CMV";
+            statsToolStripMenuItem_CMV.Size = new Size(80, 20);
+            statsToolStripMenuItem_CMV.Text = "Статистика";
+            statsToolStripMenuItem_CMV.Click += statsToolStripMenuItem_CMV_Click;
             // 
             // filterToolStripMenuItem_CMV
             // 
             filterToolStripMenuItem_CMV.DropDownItems.AddRange(new ToolStripItem[] { DeletedRowsToolStripMenuItem_CMV, AddedRowsToolStripMenuItem_CMV });
+            filterToolStripMenuItem_CMV.Enabled = false;
             filterToolStripMenuItem_CMV.Name = "filterToolStripMenuItem_CMV";
             filterToolStripMenuItem_CMV.Size = new Size(60, 20);
             filterToolStripMenuItem_CMV.Text = "Фильтр";
@@ -602,6 +604,7 @@
             DeletedRowsToolStripMenuItem_CMV.Name = "DeletedRowsToolStripMenuItem_CMV";
             DeletedRowsToolStripMenuItem_CMV.Size = new Size(191, 22);
             DeletedRowsToolStripMenuItem_CMV.Text = "Удаленные строки";
+            DeletedRowsToolStripMenuItem_CMV.CheckedChanged += DeletedRowsToolStripMenuItem_CMV_CheckedChanged;
             // 
             // AddedRowsToolStripMenuItem_CMV
             // 
@@ -611,6 +614,7 @@
             AddedRowsToolStripMenuItem_CMV.Name = "AddedRowsToolStripMenuItem_CMV";
             AddedRowsToolStripMenuItem_CMV.Size = new Size(191, 22);
             AddedRowsToolStripMenuItem_CMV.Text = "Добавленные строки";
+            AddedRowsToolStripMenuItem_CMV.CheckedChanged += AddedRowsToolStripMenuItem_CMV_CheckedChanged;
             // 
             // помощьToolStripMenuItem
             // 
@@ -661,21 +665,12 @@
         #endregion
 
         private Panel panelTop_CMV;
-        private Panel panelRight_CMV;
         private Panel panelFill_CMV;
         private DataGridView dataGridViewReadOnly_CMV;
         private Button buttonOpenFile_CMV;
         private OpenFileDialog openFileDialogTask_CMV;
         private ToolTip toolTipTask_CMV;
         private SaveFileDialog saveFileDialogTask_CMV;
-        private DataGridViewTextBoxColumn OrderID;
-        private DataGridViewTextBoxColumn UserID;
-        private DataGridViewTextBoxColumn OrderDate;
-        private DataGridViewTextBoxColumn OrderStatus;
-        private DataGridViewTextBoxColumn OrderValue;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn ProductCount;
-        private DataGridViewTextBoxColumn ProductPrice;
         private TabControl tabControlTable_CMV;
         private TabPage tabPageReadOnly_CMV;
         private TabPage tabPageEdit_CMV;
@@ -696,7 +691,7 @@
         private Button buttonEditSearchOrderID_CMV;
         private Button buttonEditSearchUserID_CMV;
         private MenuStrip menuStrip_CMV;
-        private ToolStripMenuItem статистикаToolStripMenuItem;
+        private ToolStripMenuItem statsToolStripMenuItem_CMV;
         private ToolStripMenuItem filterToolStripMenuItem_CMV;
         private ToolStripMenuItem помощьToolStripMenuItem;
         private GroupBox groupBoxRowsEdit_CMV;
@@ -716,5 +711,13 @@
         private DataGridViewTextBoxColumn ProductNameEdit;
         private DataGridViewTextBoxColumn ProductCountEdit;
         private DataGridViewTextBoxColumn ProductPriceEdit;
+        private DataGridViewTextBoxColumn OrderID;
+        private DataGridViewTextBoxColumn UserID;
+        private DataGridViewTextBoxColumn OrderDate;
+        private DataGridViewTextBoxColumn OrderStatus;
+        private DataGridViewTextBoxColumn OrderValue;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn ProductCount;
+        private DataGridViewTextBoxColumn ProductPrice;
     }
 }
