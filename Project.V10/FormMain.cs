@@ -287,7 +287,7 @@ namespace Project.V10
             saveFileDialogTask_CMV.InitialDirectory = @"C:\DataSprint7";
             saveFileDialogTask_CMV.ShowDialog();
 
-            string path = saveFileDialogTask_CMV.FileName;
+            string path = "C:\\DataSprint7\\SaveDataFile.csv";
 
             FileInfo fileInfo = new FileInfo(path);
             if (fileInfo.Exists)
