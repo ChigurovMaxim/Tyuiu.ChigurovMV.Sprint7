@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Project.V10
 {
@@ -94,17 +95,31 @@ namespace Project.V10
             labelMaxProductPrice_CMV.Text += " " + GetMaxStatFromColumn(7).ToString();
             labelMinProductPrice_CMV.Text += " " + GetMinStatFromColumn(7).ToString();
             labelAverageProductPrice_CMV.Text += " " + GetAverageStatFromColumn(7).ToString();
-            /*labelAquaRowCount_NVI.Text += " " + RowsCount(Color.Aqua).ToString();
-            labelRedRowsCount_NVI.Text += " " + RowsCount(Color.OrangeRed).ToString();
-            this.chartMarkToSpeed_NVI.ChartAreas[0].AxisX.Title = "Скорость";
-            this.chartMarkToSpeed_NVI.ChartAreas[0].AxisY.Title = "Расход топлива";
-            this.chartMarkToSpeed_NVI.Series[0].Points.Clear();
-            Array.Sort(GetIntCellsFromColumn(5));
-            Array.Sort(GetIntCellsFromColumn(7));
-            for (int i = 0; i < mainFormDataGrid.Rows.Count; i++)
+            
+            int totalProducts = GetStringCellsFromColumn(5).Length;
+
+            // Подсчет количества каждого уникального товара
+            var productCounts = GetStringCellsFromColumn(5).GroupBy(product => product)
+                                        .Select(group => new
+                                        {
+                                            ProductName = group.Key,
+                                            Count = group.Count(),
+                                            Percentage = (double)group.Count() / totalProducts * 100
+                                        });
+
+
+            foreach (var product in productCounts)
             {
-                this.chartMarkToSpeed_NVI.Series[0].Points.AddXY(GetIntCellsFromColumn(5)[i], GetIntCellsFromColumn(7)[i]);
-            }*/
+
+                var point = new DataPoint
+                {
+                    YValues = new double[] { product.Percentage },
+                    LegendText = $"{product.ProductName} | {product.Percentage:F2}%"
+                };
+
+
+                chartProductDiag_CMV.Series[0].Points.Add(point);
+            }
         }
     }
 }

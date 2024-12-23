@@ -84,6 +84,8 @@
             DeletedRowsToolStripMenuItem_CMV = new ToolStripMenuItem();
             AddedRowsToolStripMenuItem_CMV = new ToolStripMenuItem();
             помощьToolStripMenuItem = new ToolStripMenuItem();
+            guideToolStripMenuItem_CMV = new ToolStripMenuItem();
+            infoToolStripMenuItem_CMV = new ToolStripMenuItem();
             panelTop_CMV.SuspendLayout();
             groupBoxRowsEdit_CMV.SuspendLayout();
             groupBoxTable_CMV.SuspendLayout();
@@ -148,6 +150,7 @@
             buttonUnmarkDelete_CMV.Name = "buttonUnmarkDelete_CMV";
             buttonUnmarkDelete_CMV.Size = new Size(51, 45);
             buttonUnmarkDelete_CMV.TabIndex = 3;
+            toolTipTask_CMV.SetToolTip(buttonUnmarkDelete_CMV, "Снять пометку на удаление");
             buttonUnmarkDelete_CMV.UseVisualStyleBackColor = true;
             buttonUnmarkDelete_CMV.Click += buttonUnmarkDelete_CMV_Click;
             // 
@@ -159,6 +162,7 @@
             buttonMarkDelete_CMV.Name = "buttonMarkDelete_CMV";
             buttonMarkDelete_CMV.Size = new Size(51, 45);
             buttonMarkDelete_CMV.TabIndex = 3;
+            toolTipTask_CMV.SetToolTip(buttonMarkDelete_CMV, "Пометить строку на удаление");
             buttonMarkDelete_CMV.UseVisualStyleBackColor = true;
             buttonMarkDelete_CMV.Click += buttonMarkDelete_CMV_Click;
             // 
@@ -170,6 +174,7 @@
             buttonDeleteMarkedRow_CMV.Name = "buttonDeleteMarkedRow_CMV";
             buttonDeleteMarkedRow_CMV.Size = new Size(49, 45);
             buttonDeleteMarkedRow_CMV.TabIndex = 2;
+            toolTipTask_CMV.SetToolTip(buttonDeleteMarkedRow_CMV, "Удалить помеченные строки");
             buttonDeleteMarkedRow_CMV.UseVisualStyleBackColor = true;
             buttonDeleteMarkedRow_CMV.Click += buttonDeleteMarkedRow_CMV_Click;
             // 
@@ -181,6 +186,7 @@
             buttonAddRow_CMV.Name = "buttonAddRow_CMV";
             buttonAddRow_CMV.Size = new Size(49, 45);
             buttonAddRow_CMV.TabIndex = 0;
+            toolTipTask_CMV.SetToolTip(buttonAddRow_CMV, "Добавить строку");
             buttonAddRow_CMV.UseVisualStyleBackColor = true;
             buttonAddRow_CMV.Click += buttonAdd_CMV_Click;
             // 
@@ -204,6 +210,7 @@
             buttonOpenFile_CMV.Name = "buttonOpenFile_CMV";
             buttonOpenFile_CMV.Size = new Size(55, 45);
             buttonOpenFile_CMV.TabIndex = 0;
+            toolTipTask_CMV.SetToolTip(buttonOpenFile_CMV, "Открыть файл");
             buttonOpenFile_CMV.UseVisualStyleBackColor = true;
             buttonOpenFile_CMV.Click += buttonOpenFile_CMV_Click;
             // 
@@ -216,6 +223,7 @@
             buttonSaveFile_CMV.Name = "buttonSaveFile_CMV";
             buttonSaveFile_CMV.Size = new Size(55, 45);
             buttonSaveFile_CMV.TabIndex = 0;
+            toolTipTask_CMV.SetToolTip(buttonSaveFile_CMV, "Сохранить файл");
             buttonSaveFile_CMV.UseVisualStyleBackColor = true;
             buttonSaveFile_CMV.Click += buttonOpenFile_CMV_Click;
             // 
@@ -572,6 +580,11 @@
             // 
             openFileDialogTask_CMV.FileName = "DataFile";
             // 
+            // toolTipTask_CMV
+            // 
+            toolTipTask_CMV.ToolTipIcon = ToolTipIcon.Info;
+            toolTipTask_CMV.ToolTipTitle = "Подсказка";
+            // 
             // menuStrip_CMV
             // 
             menuStrip_CMV.Items.AddRange(new ToolStripItem[] { statsToolStripMenuItem_CMV, filterToolStripMenuItem_CMV, помощьToolStripMenuItem });
@@ -618,9 +631,24 @@
             // 
             // помощьToolStripMenuItem
             // 
+            помощьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem_CMV, infoToolStripMenuItem_CMV });
             помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
             помощьToolStripMenuItem.Size = new Size(68, 20);
             помощьToolStripMenuItem.Text = "Помощь";
+            // 
+            // guideToolStripMenuItem_CMV
+            // 
+            guideToolStripMenuItem_CMV.Name = "guideToolStripMenuItem_CMV";
+            guideToolStripMenuItem_CMV.Size = new Size(143, 22);
+            guideToolStripMenuItem_CMV.Text = "Руководство";
+            guideToolStripMenuItem_CMV.Click += руководствоToolStripMenuItem_Click;
+            // 
+            // infoToolStripMenuItem_CMV
+            // 
+            infoToolStripMenuItem_CMV.Name = "infoToolStripMenuItem_CMV";
+            infoToolStripMenuItem_CMV.Size = new Size(143, 22);
+            infoToolStripMenuItem_CMV.Text = "Справка";
+            infoToolStripMenuItem_CMV.Click += infoToolStripMenuItem_CMV_Click;
             // 
             // FormMain
             // 
@@ -719,5 +747,7 @@
         private DataGridViewTextBoxColumn ProductName;
         private DataGridViewTextBoxColumn ProductCount;
         private DataGridViewTextBoxColumn ProductPrice;
+        private ToolStripMenuItem guideToolStripMenuItem_CMV;
+        private ToolStripMenuItem infoToolStripMenuItem_CMV;
     }
 }

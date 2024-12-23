@@ -322,5 +322,17 @@ namespace Project.V10
             FormStatistic formStatistic = new FormStatistic(dataGridViewEdit_CMV);
             formStatistic.ShowDialog();
         }
+
+        private void infoToolStripMenuItem_CMV_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void ÛÍÓ‚Ó‰ÒÚ‚ÓToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGuide formGuide = new FormGuide();
+            formGuide.ShowDialog();
+        }
     }
 }

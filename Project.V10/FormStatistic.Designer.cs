@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             groupBoxOrdersStatistic_CMV = new GroupBox();
             labelOrdersCount_CMV = new Label();
             labelDelivered_CMV = new Label();
@@ -46,10 +47,10 @@
             labelMaxProductPrice_CMV = new Label();
             labelMaxProductCount_CMV = new Label();
             labelMostPopularProduct_CMV = new Label();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartProductDiag_CMV = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxOrdersStatistic_CMV.SuspendLayout();
             groupBoxProduct_CMV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartProductDiag_CMV).BeginInit();
             SuspendLayout();
             // 
             // groupBoxOrdersStatistic_CMV
@@ -200,39 +201,46 @@
             labelMostPopularProduct_CMV.TabIndex = 0;
             labelMostPopularProduct_CMV.Text = "Самый популярный товар:";
             // 
-            // chart1
+            // chartProductDiag_CMV
             // 
             chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
+            chartProductDiag_CMV.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
-            chart1.Location = new Point(410, 16);
-            chart1.Name = "chart1";
+            chartProductDiag_CMV.Legends.Add(legend1);
+            chartProductDiag_CMV.Location = new Point(380, 16);
+            chartProductDiag_CMV.Name = "chartProductDiag_CMV";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            chart1.Series.Add(series1);
-            chart1.Size = new Size(434, 381);
-            chart1.TabIndex = 1;
-            chart1.Text = "chart1";
+            chartProductDiag_CMV.Series.Add(series1);
+            chartProductDiag_CMV.Size = new Size(502, 381);
+            chartProductDiag_CMV.TabIndex = 1;
+            chartProductDiag_CMV.Text = "chart1";
+            title1.Name = "Title_CMV";
+            title1.Text = "ОБЪЕМ ТОВАРОВ";
+            chartProductDiag_CMV.Titles.Add(title1);
             // 
             // FormStatistic
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(894, 489);
-            Controls.Add(chart1);
+            ClientSize = new Size(894, 422);
+            Controls.Add(chartProductDiag_CMV);
             Controls.Add(groupBoxProduct_CMV);
             Controls.Add(groupBoxOrdersStatistic_CMV);
+            MaximizeBox = false;
+            MaximumSize = new Size(910, 461);
+            MinimumSize = new Size(910, 461);
             Name = "FormStatistic";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Статистика";
             Load += FormStatistics_Load;
             groupBoxOrdersStatistic_CMV.ResumeLayout(false);
             groupBoxOrdersStatistic_CMV.PerformLayout();
             groupBoxProduct_CMV.ResumeLayout(false);
             groupBoxProduct_CMV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartProductDiag_CMV).EndInit();
             ResumeLayout(false);
         }
 
@@ -253,6 +261,6 @@
         private Label labelMaxProductPrice_CMV;
         private Label labelMaxProductCount_CMV;
         private Label labelMostPopularProduct_CMV;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProductDiag_CMV;
     }
 }
