@@ -35,20 +35,22 @@
             // 
             // textBoxGuide_CMV
             // 
-            textBoxGuide_CMV.Location = new Point(12, 12);
+            textBoxGuide_CMV.Location = new Point(14, 16);
+            textBoxGuide_CMV.Margin = new Padding(3, 4, 3, 4);
             textBoxGuide_CMV.Multiline = true;
             textBoxGuide_CMV.Name = "textBoxGuide_CMV";
             textBoxGuide_CMV.ReadOnly = true;
-            textBoxGuide_CMV.Size = new Size(599, 412);
+            textBoxGuide_CMV.Size = new Size(684, 584);
             textBoxGuide_CMV.TabIndex = 0;
             textBoxGuide_CMV.TabStop = false;
             textBoxGuide_CMV.Text = resources.GetString("textBoxGuide_CMV.Text");
             // 
             // buttonOk_CMV
             // 
-            buttonOk_CMV.Location = new Point(533, 456);
+            buttonOk_CMV.Location = new Point(609, 608);
+            buttonOk_CMV.Margin = new Padding(3, 4, 3, 4);
             buttonOk_CMV.Name = "buttonOk_CMV";
-            buttonOk_CMV.Size = new Size(75, 23);
+            buttonOk_CMV.Size = new Size(86, 31);
             buttonOk_CMV.TabIndex = 1;
             buttonOk_CMV.Text = "ОК";
             buttonOk_CMV.UseVisualStyleBackColor = true;
@@ -56,12 +58,15 @@
             // 
             // FormGuide
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 491);
+            ClientSize = new Size(709, 668);
             Controls.Add(buttonOk_CMV);
             Controls.Add(textBoxGuide_CMV);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormGuide";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Руководство пользователя";
             ResumeLayout(false);
             PerformLayout();

@@ -329,7 +329,7 @@ namespace Project.V10
             formAbout.ShowDialog();
         }
 
-        private void ğóêîâîäñòâîToolStripMenuItem_Click(object sender, EventArgs e)
+        private void guideToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGuide formGuide = new FormGuide();
             formGuide.ShowDialog();

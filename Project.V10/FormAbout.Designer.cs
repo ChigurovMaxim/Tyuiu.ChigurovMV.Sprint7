@@ -38,9 +38,10 @@
             // pictureBoxAuthor_CMV
             // 
             pictureBoxAuthor_CMV.Image = (Image)resources.GetObject("pictureBoxAuthor_CMV.Image");
-            pictureBoxAuthor_CMV.Location = new Point(12, 12);
+            pictureBoxAuthor_CMV.Location = new Point(14, 16);
+            pictureBoxAuthor_CMV.Margin = new Padding(3, 4, 3, 4);
             pictureBoxAuthor_CMV.Name = "pictureBoxAuthor_CMV";
-            pictureBoxAuthor_CMV.Size = new Size(111, 151);
+            pictureBoxAuthor_CMV.Size = new Size(127, 201);
             pictureBoxAuthor_CMV.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxAuthor_CMV.TabIndex = 5;
             pictureBoxAuthor_CMV.TabStop = false;
@@ -48,9 +49,10 @@
             // buttonOK_CMV
             // 
             buttonOK_CMV.Cursor = Cursors.Hand;
-            buttonOK_CMV.Location = new Point(354, 180);
+            buttonOK_CMV.Location = new Point(405, 276);
+            buttonOK_CMV.Margin = new Padding(3, 4, 3, 4);
             buttonOK_CMV.Name = "buttonOK_CMV";
-            buttonOK_CMV.Size = new Size(75, 23);
+            buttonOK_CMV.Size = new Size(86, 31);
             buttonOK_CMV.TabIndex = 4;
             buttonOK_CMV.Text = "Ок";
             buttonOK_CMV.UseVisualStyleBackColor = true;
@@ -58,26 +60,28 @@
             // 
             // textBoxHelp_CMV
             // 
-            textBoxHelp_CMV.Location = new Point(129, 12);
+            textBoxHelp_CMV.Location = new Point(147, 16);
+            textBoxHelp_CMV.Margin = new Padding(3, 4, 3, 4);
             textBoxHelp_CMV.Multiline = true;
             textBoxHelp_CMV.Name = "textBoxHelp_CMV";
             textBoxHelp_CMV.ReadOnly = true;
-            textBoxHelp_CMV.Size = new Size(313, 151);
+            textBoxHelp_CMV.Size = new Size(357, 252);
             textBoxHelp_CMV.TabIndex = 3;
             textBoxHelp_CMV.TabStop = false;
             textBoxHelp_CMV.Text = resources.GetString("textBoxHelp_CMV.Text");
             // 
             // FormAbout
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(463, 232);
+            ClientSize = new Size(529, 346);
             Controls.Add(pictureBoxAuthor_CMV);
             Controls.Add(buttonOK_CMV);
             Controls.Add(textBoxHelp_CMV);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            MinimumSize = new Size(479, 271);
+            MinimumSize = new Size(545, 346);
             Name = "FormAbout";
             StartPosition = FormStartPosition.CenterParent;
             Text = "О программе";

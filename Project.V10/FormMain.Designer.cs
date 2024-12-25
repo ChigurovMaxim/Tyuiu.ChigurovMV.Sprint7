@@ -83,7 +83,7 @@
             filterToolStripMenuItem_CMV = new ToolStripMenuItem();
             DeletedRowsToolStripMenuItem_CMV = new ToolStripMenuItem();
             AddedRowsToolStripMenuItem_CMV = new ToolStripMenuItem();
-            помощьToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
             guideToolStripMenuItem_CMV = new ToolStripMenuItem();
             infoToolStripMenuItem_CMV = new ToolStripMenuItem();
             panelTop_CMV.SuspendLayout();
@@ -612,7 +612,7 @@
             // menuStrip_CMV
             // 
             menuStrip_CMV.ImageScalingSize = new Size(20, 20);
-            menuStrip_CMV.Items.AddRange(new ToolStripItem[] { statsToolStripMenuItem_CMV, filterToolStripMenuItem_CMV, помощьToolStripMenuItem });
+            menuStrip_CMV.Items.AddRange(new ToolStripItem[] { statsToolStripMenuItem_CMV, filterToolStripMenuItem_CMV, helpToolStripMenuItem });
             menuStrip_CMV.Location = new Point(0, 0);
             menuStrip_CMV.Name = "menuStrip_CMV";
             menuStrip_CMV.Padding = new Padding(7, 3, 0, 3);
@@ -655,19 +655,19 @@
             AddedRowsToolStripMenuItem_CMV.Text = "Добавленные строки";
             AddedRowsToolStripMenuItem_CMV.CheckedChanged += AddedRowsToolStripMenuItem_CMV_CheckedChanged;
             // 
-            // помощьToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            помощьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem_CMV, infoToolStripMenuItem_CMV });
-            помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            помощьToolStripMenuItem.Size = new Size(83, 24);
-            помощьToolStripMenuItem.Text = "Помощь";
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { guideToolStripMenuItem_CMV, infoToolStripMenuItem_CMV });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(83, 24);
+            helpToolStripMenuItem.Text = "Помощь";
             // 
             // guideToolStripMenuItem_CMV
             // 
             guideToolStripMenuItem_CMV.Name = "guideToolStripMenuItem_CMV";
             guideToolStripMenuItem_CMV.Size = new Size(178, 26);
             guideToolStripMenuItem_CMV.Text = "Руководство";
-            guideToolStripMenuItem_CMV.Click += руководствоToolStripMenuItem_Click;
+            guideToolStripMenuItem_CMV.Click += guideToolStripMenuItem_Click;
             // 
             // infoToolStripMenuItem_CMV
             // 
@@ -746,7 +746,7 @@
         private MenuStrip menuStrip_CMV;
         private ToolStripMenuItem statsToolStripMenuItem_CMV;
         private ToolStripMenuItem filterToolStripMenuItem_CMV;
-        private ToolStripMenuItem помощьToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
         private GroupBox groupBoxRowsEdit_CMV;
         private GroupBox groupBoxTable_CMV;
         private Button buttonAddRow_CMV;
