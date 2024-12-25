@@ -284,10 +284,9 @@ namespace Project.V10
         private void buttonSaveFile_CMV_Click(object sender, EventArgs e)
         {
             saveFileDialogTask_CMV.FileName = "SaveDataFile.csv";
-            saveFileDialogTask_CMV.InitialDirectory = @"C:\DataSprint7";
             saveFileDialogTask_CMV.ShowDialog();
 
-            string path = "C:\\DataSprint7\\SaveDataFile.csv";
+            string path = saveFileDialogTask_CMV.FileName;
 
             FileInfo fileInfo = new FileInfo(path);
             if (fileInfo.Exists)
